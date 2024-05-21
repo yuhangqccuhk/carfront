@@ -21,6 +21,7 @@ function Login() {
     }
     
     const handleLogin = () => {
+        alert(import.meta.env.VITE_API_URL);
         axios.post(import.meta.env.VITE_API_URL + "/login", user, { headers: { 'Content-Type': 'application/json' } })
             .then(res => {
                 const jwtToken = res.headers.authorization;
