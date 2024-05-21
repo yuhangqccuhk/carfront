@@ -24,7 +24,7 @@ function Login() {
         axios.post(import.meta.env.VITE_API_URL + "/login", user, { headers: { 'Content-Type': 'application/json' } })
             .then(res => {
                 const jwtToken = res.headers.authorization;
-                alert(jwtToken);
+
                 if (jwtToken !== null) {
                     sessionStorage.setItem("jwt", jwtToken);
                     setAuth(true);
